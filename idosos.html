@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>LabFarma - Cadastro de Idosos</title>
+</head>
+<body>
+    <h2>LabFarma — Cadastrar Idoso</h2>
+    
+    <form onsubmit="event.preventDefault(); validarIdoso();">
+        <label>Nome do Idoso: <input type="text" id="nome"></label><br><br>
+        <label>Idade: <input type="text" id="idade"></label><br><br>
+        <label>Observações Médicas: <textarea id="observacoes"></textarea></label><br><br>
+        
+        <button type="submit" id="btnSalvar">Salvar Idoso</button>
+    </form>
+
+    <div id="mensagemErroSucesso" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function validarIdoso() {
+            const nome = document.getElementById('nome').value;
+            const idadeInput = document.getElementById('idade').value;
+            const msgDiv = document.getElementById('mensagemErroSucesso');
+
+            if (!nome || nome.trim() === "") {
+                msgDiv.style.color = "red";
+                msgDiv.innerText = "O nome do idoso é obrigatório.";
+                return;
+            }
+
+            if (idadeInput === undefined || idadeInput.trim() === "" || isNaN(idadeInput)) {
+                msgDiv.style.color = "red";
+                msgDiv.innerText = "Idade inválida ou fora do escopo permitido.";
+                return;
+            }
+
+            const idade = Number(idadeInput);
+
+            if (idade < 50) {
+                msgDiv.style.color = "red";
+                msgDiv.innerText = "Sistema exclusivo para gerenciamento de idosos (Idade mínima: 50 anos).";
+                return;
+            }
+
+            msgDiv.style.color = "green";
+            msgDiv.innerText = "Idoso cadastrado com sucesso";
+        }
+    </script>
+</body>
+</html>

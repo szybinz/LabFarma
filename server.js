@@ -4,7 +4,6 @@ import medicamentoRoutes from './routes/medicamentoRoutes.js';
 const app = express();
 app.use(express.json());
 
-// Injeta as rotas no prefixo /api (ficando /api/idosos)
 app.use('/api', idosoRoutes);
 app.use('/api', medicamentoRoutes);
 

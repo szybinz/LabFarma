@@ -5,7 +5,6 @@ export const cadastrarIdoso = (req, res) => {
     const { nome, idade, observacoesMedicas } = req.body;
     const timestampAtual = new Date().toISOString();
 
-    // Validação do Nome (Mitigando F2 do FMEA)
     if (!nome || nome.trim() === "") {
         return res.status(400).json({
             status: "erro",
@@ -15,7 +14,6 @@ export const cadastrarIdoso = (req, res) => {
         });
     }
 
-    // Validação da Idade (Mitigando F3 do FMEA)
     if (idade === undefined || typeof idade !== 'number' || isNaN(idade)) {
         return res.status(400).json({
             status: "erro",
@@ -25,7 +23,6 @@ export const cadastrarIdoso = (req, res) => {
         });
     }
 
-    // Validação de Regra de Negócio (Idade mínima 50 anos)
     if (idade < 50) {
         return res.status(400).json({
             status: "erro",

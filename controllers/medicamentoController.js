@@ -4,7 +4,6 @@ export const cadastrarMedicamento = (req, res) => {
     const { idosoId, nomeMedicamento, dosagem, horario } = req.body;
     const timestampAtual = new Date().toISOString();
 
-    // Validação de campos obrigatórios (Mitigando F6 do FMEA)
     if (!idosoId || !nomeMedicamento || !horario) {
         return res.status(400).json({
             status: "erro",
@@ -13,8 +12,6 @@ export const cadastrarMedicamento = (req, res) => {
             timestamp: timestampAtual
         });
     }
-
-    // Validação de limite numérico (Mitigando F21 do FMEA)
     if (dosagem <= 0) {
         return res.status(400).json({
             status: "erro",

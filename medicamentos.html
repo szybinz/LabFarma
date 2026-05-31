@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>LabFarma - Cadastro de Medicamentos</title>
+</head>
+<body>
+    <h2>LabFarma — Associar Medicamento</h2>
+    
+    <form onsubmit="event.preventDefault(); validarMedicamento();">
+        <label>ID do Idoso: <input type="number" id="idosoId"></label><br><br>
+        <label>Nome do Medicamento: <input type="text" id="nomeMedicamento"></label><br><br>
+        <label>Dosagem: <input type="number" id="dosagem"></label><br><br>
+        <label>Horário: <input type="text" id="horario" placeholder="HH:MM"></label><br><br>
+        
+        <button type="submit" id="btnAssociar">Associar Medicamento</button>
+    </form>
+
+    <div id="mensagemMedicamento" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function validarMedicamento() {
+            const idosoId = document.getElementById('idosoId').value;
+            const nomeMedicamento = document.getElementById('nomeMedicamento').value;
+            const dosagem = document.getElementById('dosagem').value;
+            const horario = document.getElementById('horario').value;
+            const msgDiv = document.getElementById('mensagemMedicamento');
+
+            if (!idosoId || !nomeMedicamento || !horario) {
+                msgDiv.innerText = "Todos os campos (idosoId, nomeMedicamento, horario) são obrigatórios.";
+                return;
+            }
+
+            if (Number(dosagem) <= 0) {
+                msgDiv.innerText = "A dosagem deve ser maior que zero.";
+                return;
+            }
+
+            msgDiv.innerText = "Medicamento associado com sucesso";
+        }
+    </script>
+</body>
+</html>
