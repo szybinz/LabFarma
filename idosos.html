@@ -21,14 +21,25 @@
         function validarIdoso() {
             const nome = document.getElementById('nome').value;
             const idadeInput = document.getElementById('idade').value;
+            const observacoes = document.getElementById('observacoes').value;
             const msgDiv = document.getElementById('mensagemErroSucesso');
 
+       
             if (!nome || nome.trim() === "") {
                 msgDiv.style.color = "red";
                 msgDiv.innerText = "O nome do idoso é obrigatório.";
                 return;
             }
 
+          
+            const regexLetras = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+            if (!regexLetras.test(nome)) {
+                msgDiv.style.color = "red";
+                msgDiv.innerText = "O nome do idoso deve conter apenas caracteres alfabéticos.";
+                return;
+            }
+
+        
             if (idadeInput === undefined || idadeInput.trim() === "" || isNaN(idadeInput)) {
                 msgDiv.style.color = "red";
                 msgDiv.innerText = "Idade inválida ou fora do escopo permitido.";
@@ -40,6 +51,12 @@
             if (idade < 50) {
                 msgDiv.style.color = "red";
                 msgDiv.innerText = "Sistema exclusivo para gerenciamento de idosos (Idade mínima: 50 anos).";
+                return;
+            }
+
+            if (observacoes && observacoes.length > 500) {
+                msgDiv.style.color = "red";
+                msgDiv.innerText = "O campo de observações excede o limite de caracteres permitido.";
                 return;
             }
 
