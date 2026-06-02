@@ -1,439 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-31T22:38:36.181808" rpa="false" schemaversion="5">
-<suite id="s1" name="Medicamentos" source="C:\Users\makio\LabFarma\medicamentos.robot">
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-01T21:10:28.237823" rpa="false" schemaversion="5">
+<suite id="s1" name="Medicamentos Ct08" source="C:\Users\makio\LabFarma\medicamentos_ct08.robot">
 <kw name="Dado que o usuário acessa a tela de associação de medicamentos" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:36.557246" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/makio/LabFarma/medicamentos.html'.</msg>
+<msg time="2026-06-01T21:10:28.601798" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5500/medicamentos.html'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-31T22:38:36.556908" elapsed="1.626276"/>
+<status status="PASS" start="2026-06-01T21:10:28.601348" elapsed="1.759391"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-05-31T22:38:38.184438" elapsed="0.078896"/>
+<status status="PASS" start="2026-06-01T21:10:30.361661" elapsed="0.064900"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:36.555865" elapsed="1.707768"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-01T21:10:32.428324" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-01T21:10:30.426993" elapsed="2.001536"/>
 </kw>
-<test id="s1-t1" name="CT03 - Deve associar medicamento com ID de idoso válido" line="18">
+<status status="PASS" start="2026-06-01T21:10:28.599006" elapsed="3.829672"/>
+</kw>
+<test id="s1-t1" name="CT08 - Deve associar medicamento com dosagem no limite mínimo válido" line="17">
 <kw name="Dado que o usuário informa o id do idoso">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:38.270830" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
+<msg time="2026-06-01T21:10:32.432383" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
 <arg>${INPUT_IDOSO_ID}</arg>
 <arg>${id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:38.269509" elapsed="0.298887"/>
+<status status="PASS" start="2026-06-01T21:10:32.431494" elapsed="0.326754"/>
 </kw>
 <arg>5</arg>
-<status status="PASS" start="2026-05-31T22:38:38.268707" elapsed="0.299994"/>
+<status status="PASS" start="2026-06-01T21:10:32.430837" elapsed="0.327714"/>
 </kw>
 <kw name="E informa o nome do medicamento">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:38.572412" level="INFO">Typing text 'Paracetamol' into text field 'id=nomeMedicamento'.</msg>
+<msg time="2026-06-01T21:10:32.761461" level="INFO">Typing text 'Dipirona' into text field 'id=nomeMedicamento'.</msg>
 <arg>${INPUT_NOME}</arg>
 <arg>${nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:38.571860" elapsed="0.122195"/>
-</kw>
-<arg>Paracetamol</arg>
-<status status="PASS" start="2026-05-31T22:38:38.571029" elapsed="0.123233"/>
-</kw>
-<kw name="E informa a dosagem">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:38.695640" level="INFO">Typing text '500' into text field 'id=dosagem'.</msg>
-<arg>${INPUT_DOSAGEM}</arg>
-<arg>${dosagem}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:38.695218" elapsed="0.101032"/>
-</kw>
-<arg>500</arg>
-<status status="PASS" start="2026-05-31T22:38:38.694758" elapsed="0.101714"/>
-</kw>
-<kw name="E informa o horario">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:38.798702" level="INFO">Typing text '14:30' into text field 'id=horario'.</msg>
-<arg>${INPUT_HORARIO}</arg>
-<arg>${horario}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:38.798211" elapsed="0.134921"/>
-</kw>
-<arg>14:30</arg>
-<status status="PASS" start="2026-05-31T22:38:38.797453" elapsed="0.135944"/>
-</kw>
-<kw name="Quando solicitar a associação">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:38.935338" level="INFO">Clicking button 'id=btnAssociar'.</msg>
-<arg>${BOTAO_ASSOCIAR}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:38.934788" elapsed="0.128569"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:38.933957" elapsed="0.129581"/>
-</kw>
-<kw name="Então o sistema deve apresentar a mensagem">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.065248" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'Medicamento associado com sucesso'.</msg>
-<arg>${MENSAGEM}</arg>
-<arg>${mensagem_esperada}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.064804" elapsed="0.028170"/>
-</kw>
-<arg>Medicamento associado com sucesso</arg>
-<status status="PASS" start="2026-05-31T22:38:39.063994" elapsed="0.029107"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:38.263862" elapsed="0.829561"/>
-</test>
-<test id="s1-t2" name="CTF03 - Deve bloquear associação com ID de idoso vazio" line="26">
-<kw name="Dado que o usuário informa o id do idoso">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.095672" level="INFO">Typing text '' into text field 'id=idosoId'.</msg>
-<arg>${INPUT_IDOSO_ID}</arg>
-<arg>${id}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.095399" elapsed="0.081095"/>
-</kw>
-<arg>${EMPTY}</arg>
-<status status="PASS" start="2026-05-31T22:38:39.094734" elapsed="0.081939"/>
-</kw>
-<kw name="E informa o nome do medicamento">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.178049" level="INFO">Typing text 'Paracetamol' into text field 'id=nomeMedicamento'.</msg>
-<arg>${INPUT_NOME}</arg>
-<arg>${nome}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.177685" elapsed="0.089359"/>
-</kw>
-<arg>Paracetamol</arg>
-<status status="PASS" start="2026-05-31T22:38:39.177211" elapsed="0.090080"/>
-</kw>
-<kw name="E informa a dosagem">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.270617" level="INFO">Typing text '500' into text field 'id=dosagem'.</msg>
-<arg>${INPUT_DOSAGEM}</arg>
-<arg>${dosagem}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.269701" elapsed="0.084045"/>
-</kw>
-<arg>500</arg>
-<status status="PASS" start="2026-05-31T22:38:39.269064" elapsed="0.085018"/>
-</kw>
-<kw name="E informa o horario">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.355629" level="INFO">Typing text '14:30' into text field 'id=horario'.</msg>
-<arg>${INPUT_HORARIO}</arg>
-<arg>${horario}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.355192" elapsed="0.098306"/>
-</kw>
-<arg>14:30</arg>
-<status status="PASS" start="2026-05-31T22:38:39.354691" elapsed="0.099000"/>
-</kw>
-<kw name="Quando solicitar a associação">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.454917" level="INFO">Clicking button 'id=btnAssociar'.</msg>
-<arg>${BOTAO_ASSOCIAR}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.454666" elapsed="0.066651"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:39.454303" elapsed="0.067187"/>
-</kw>
-<kw name="Então o sistema deve apresentar a mensagem">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.522605" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'Todos os campos (idosoId, nomeMedicamento, horario) são obrigatórios.'.</msg>
-<arg>${MENSAGEM}</arg>
-<arg>${mensagem_esperada}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.522330" elapsed="0.014413"/>
-</kw>
-<arg>Todos os campos (idosoId, nomeMedicamento, horario) são obrigatórios.</arg>
-<status status="PASS" start="2026-05-31T22:38:39.521930" elapsed="0.014932"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:39.094072" elapsed="0.443148"/>
-</test>
-<test id="s1-t3" name="CT08 - Deve associar medicamento com dosagem no limite mínimo válido" line="34">
-<kw name="Dado que o usuário informa o id do idoso">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.541401" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
-<arg>${INPUT_IDOSO_ID}</arg>
-<arg>${id}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.540635" elapsed="0.092839"/>
-</kw>
-<arg>5</arg>
-<status status="PASS" start="2026-05-31T22:38:39.540132" elapsed="0.093955"/>
-</kw>
-<kw name="E informa o nome do medicamento">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.637700" level="INFO">Typing text 'Dipirona' into text field 'id=nomeMedicamento'.</msg>
-<arg>${INPUT_NOME}</arg>
-<arg>${nome}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.635202" elapsed="0.085310"/>
+<status status="PASS" start="2026-06-01T21:10:32.760611" elapsed="0.213455"/>
 </kw>
 <arg>Dipirona</arg>
-<status status="PASS" start="2026-05-31T22:38:39.634666" elapsed="0.086131"/>
+<status status="PASS" start="2026-06-01T21:10:32.759410" elapsed="0.214824"/>
 </kw>
 <kw name="E informa a dosagem">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.722213" level="INFO">Typing text '1' into text field 'id=dosagem'.</msg>
+<msg time="2026-06-01T21:10:32.975669" level="INFO">Typing text '1' into text field 'id=dosagem'.</msg>
 <arg>${INPUT_DOSAGEM}</arg>
 <arg>${dosagem}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.721896" elapsed="0.074656"/>
+<status status="PASS" start="2026-06-01T21:10:32.975253" elapsed="0.239332"/>
 </kw>
 <arg>1</arg>
-<status status="PASS" start="2026-05-31T22:38:39.721470" elapsed="0.075206"/>
+<status status="PASS" start="2026-06-01T21:10:32.974781" elapsed="0.240082"/>
 </kw>
 <kw name="E informa o horario">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.797689" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
+<msg time="2026-06-01T21:10:33.217815" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
 <arg>${INPUT_HORARIO}</arg>
 <arg>${horario}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.797423" elapsed="0.095504"/>
+<status status="PASS" start="2026-06-01T21:10:33.217070" elapsed="0.251312"/>
 </kw>
 <arg>08:00</arg>
-<status status="PASS" start="2026-05-31T22:38:39.797059" elapsed="0.096005"/>
+<status status="PASS" start="2026-06-01T21:10:33.215723" elapsed="0.252904"/>
 </kw>
 <kw name="Quando solicitar a associação">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.894063" level="INFO">Clicking button 'id=btnAssociar'.</msg>
+<msg time="2026-06-01T21:10:33.472680" level="INFO">Clicking button 'id=btnAssociar'.</msg>
 <arg>${BOTAO_ASSOCIAR}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.893804" elapsed="0.098270"/>
+<status status="PASS" start="2026-06-01T21:10:33.472074" elapsed="0.184854"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:39.893425" elapsed="0.098790"/>
+<status status="PASS" start="2026-06-01T21:10:33.471355" elapsed="0.185827"/>
 </kw>
 <kw name="Então o sistema deve apresentar a mensagem">
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:39.993608" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'Medicamento associado com sucesso'.</msg>
+<msg time="2026-06-01T21:10:33.660443" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'Medicamento associado com sucesso'.</msg>
 <arg>${MENSAGEM}</arg>
 <arg>${mensagem_esperada}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-31T22:38:39.993352" elapsed="0.015765"/>
+<status status="PASS" start="2026-06-01T21:10:33.659504" elapsed="0.077857"/>
 </kw>
 <arg>Medicamento associado com sucesso</arg>
-<status status="PASS" start="2026-05-31T22:38:39.993001" elapsed="0.016236"/>
+<status status="PASS" start="2026-06-01T21:10:33.658244" elapsed="0.079297"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:39.538947" elapsed="0.470598"/>
+<status status="PASS" start="2026-06-01T21:10:32.428817" elapsed="1.309171"/>
 </test>
-<test id="s1-t4" name="CTF08 - Deve bloquear dosagem igual a zero" line="42">
+<test id="s1-t2" name="CTF08 - Deve bloquear dosagem igual a zero" line="25">
 <kw name="Dado que o usuário informa o id do idoso">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.011311" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
+<msg time="2026-06-01T21:10:33.741166" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
 <arg>${INPUT_IDOSO_ID}</arg>
 <arg>${id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.010946" elapsed="0.077474"/>
+<status status="PASS" start="2026-06-01T21:10:33.740498" elapsed="0.141151"/>
 </kw>
 <arg>5</arg>
-<status status="PASS" start="2026-05-31T22:38:40.010560" elapsed="0.078015"/>
+<status status="PASS" start="2026-06-01T21:10:33.739855" elapsed="0.142083"/>
 </kw>
 <kw name="E informa o nome do medicamento">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.089603" level="INFO">Typing text 'Dipirona' into text field 'id=nomeMedicamento'.</msg>
+<msg time="2026-06-01T21:10:33.884940" level="INFO">Typing text 'Dipirona' into text field 'id=nomeMedicamento'.</msg>
 <arg>${INPUT_NOME}</arg>
 <arg>${nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.089338" elapsed="0.084962"/>
+<status status="PASS" start="2026-06-01T21:10:33.884388" elapsed="0.156742"/>
 </kw>
 <arg>Dipirona</arg>
-<status status="PASS" start="2026-05-31T22:38:40.088989" elapsed="0.085470"/>
+<status status="PASS" start="2026-06-01T21:10:33.883663" elapsed="0.157591"/>
 </kw>
 <kw name="E informa a dosagem">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.175798" level="INFO">Typing text '0' into text field 'id=dosagem'.</msg>
+<msg time="2026-06-01T21:10:34.043090" level="INFO">Typing text '0' into text field 'id=dosagem'.</msg>
 <arg>${INPUT_DOSAGEM}</arg>
 <arg>${dosagem}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.175428" elapsed="0.090554"/>
+<status status="PASS" start="2026-06-01T21:10:34.042495" elapsed="0.167246"/>
 </kw>
 <arg>0</arg>
-<status status="PASS" start="2026-05-31T22:38:40.174922" elapsed="0.091185"/>
+<status status="PASS" start="2026-06-01T21:10:34.041828" elapsed="0.168077"/>
 </kw>
 <kw name="E informa o horario">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.267955" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
+<msg time="2026-06-01T21:10:34.213082" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
 <arg>${INPUT_HORARIO}</arg>
 <arg>${horario}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.267427" elapsed="0.077466"/>
+<status status="PASS" start="2026-06-01T21:10:34.211944" elapsed="0.207350"/>
 </kw>
 <arg>08:00</arg>
-<status status="PASS" start="2026-05-31T22:38:40.266606" elapsed="0.078480"/>
+<status status="PASS" start="2026-06-01T21:10:34.210510" elapsed="0.208991"/>
 </kw>
 <kw name="Quando solicitar a associação">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.346095" level="INFO">Clicking button 'id=btnAssociar'.</msg>
+<msg time="2026-06-01T21:10:34.421654" level="INFO">Clicking button 'id=btnAssociar'.</msg>
 <arg>${BOTAO_ASSOCIAR}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.345844" elapsed="0.070977"/>
+<status status="PASS" start="2026-06-01T21:10:34.420950" elapsed="0.097273"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:40.345484" elapsed="0.071933"/>
+<status status="PASS" start="2026-06-01T21:10:34.420168" elapsed="0.098344"/>
 </kw>
 <kw name="Então o sistema deve apresentar a mensagem">
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.418636" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'A dosagem deve ser maior que zero.'.</msg>
+<msg time="2026-06-01T21:10:34.519615" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'A dosagem deve ser maior que zero.'.</msg>
 <arg>${MENSAGEM}</arg>
 <arg>${mensagem_esperada}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.418354" elapsed="0.013696"/>
+<status status="PASS" start="2026-06-01T21:10:34.519343" elapsed="0.019908"/>
 </kw>
 <arg>A dosagem deve ser maior que zero.</arg>
-<status status="PASS" start="2026-05-31T22:38:40.417963" elapsed="0.014216"/>
+<status status="PASS" start="2026-06-01T21:10:34.518975" elapsed="0.020442"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:40.010040" elapsed="0.422402"/>
-</test>
-<test id="s1-t5" name="CT13 - Deve bloquear associação sem nome do medicamento" line="50">
-<kw name="Dado que o usuário informa o id do idoso">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.435098" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
-<arg>${INPUT_IDOSO_ID}</arg>
-<arg>${id}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.434749" elapsed="0.075212"/>
-</kw>
-<arg>5</arg>
-<status status="PASS" start="2026-05-31T22:38:40.434205" elapsed="0.075880"/>
-</kw>
-<kw name="E informa o nome do medicamento">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.511391" level="INFO">Typing text '' into text field 'id=nomeMedicamento'.</msg>
-<arg>${INPUT_NOME}</arg>
-<arg>${nome}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.511106" elapsed="0.073493"/>
-</kw>
-<arg>${EMPTY}</arg>
-<status status="PASS" start="2026-05-31T22:38:40.510465" elapsed="0.074348"/>
-</kw>
-<kw name="E informa a dosagem">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.586286" level="INFO">Typing text '500' into text field 'id=dosagem'.</msg>
-<arg>${INPUT_DOSAGEM}</arg>
-<arg>${dosagem}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.585746" elapsed="0.073228"/>
-</kw>
-<arg>500</arg>
-<status status="PASS" start="2026-05-31T22:38:40.585321" elapsed="0.073825"/>
-</kw>
-<kw name="E informa o horario">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.660613" level="INFO">Typing text '14:30' into text field 'id=horario'.</msg>
-<arg>${INPUT_HORARIO}</arg>
-<arg>${horario}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.660133" elapsed="0.078035"/>
-</kw>
-<arg>14:30</arg>
-<status status="PASS" start="2026-05-31T22:38:40.659600" elapsed="0.078773"/>
-</kw>
-<kw name="Quando solicitar a associação">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.739690" level="INFO">Clicking button 'id=btnAssociar'.</msg>
-<arg>${BOTAO_ASSOCIAR}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.739311" elapsed="0.069966"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:40.738848" elapsed="0.070583"/>
-</kw>
-<kw name="Então o sistema deve apresentar a mensagem">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.810643" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'Todos os campos (idosoId, nomeMedicamento, horario) são obrigatórios.'.</msg>
-<arg>${MENSAGEM}</arg>
-<arg>${mensagem_esperada}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.810275" elapsed="0.018169"/>
-</kw>
-<arg>Todos os campos (idosoId, nomeMedicamento, horario) são obrigatórios.</arg>
-<status status="PASS" start="2026-05-31T22:38:40.809835" elapsed="0.018752"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:40.433027" elapsed="0.395846"/>
-</test>
-<test id="s1-t6" name="CTF13 - Deve associar medicamento com todos os campos preenchidos corretamente" line="58">
-<kw name="Dado que o usuário informa o id do idoso">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.830980" level="INFO">Typing text '5' into text field 'id=idosoId'.</msg>
-<arg>${INPUT_IDOSO_ID}</arg>
-<arg>${id}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.830569" elapsed="0.074794"/>
-</kw>
-<arg>5</arg>
-<status status="PASS" start="2026-05-31T22:38:40.830111" elapsed="0.075379"/>
-</kw>
-<kw name="E informa o nome do medicamento">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.906591" level="INFO">Typing text 'Amoxicilina' into text field 'id=nomeMedicamento'.</msg>
-<arg>${INPUT_NOME}</arg>
-<arg>${nome}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.906286" elapsed="0.084773"/>
-</kw>
-<arg>Amoxicilina</arg>
-<status status="PASS" start="2026-05-31T22:38:40.905876" elapsed="0.085411"/>
-</kw>
-<kw name="E informa a dosagem">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:40.992742" level="INFO">Typing text '250' into text field 'id=dosagem'.</msg>
-<arg>${INPUT_DOSAGEM}</arg>
-<arg>${dosagem}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:40.992332" elapsed="0.071861"/>
-</kw>
-<arg>250</arg>
-<status status="PASS" start="2026-05-31T22:38:40.991831" elapsed="0.072501"/>
-</kw>
-<kw name="E informa o horario">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:41.065600" level="INFO">Typing text '12:00' into text field 'id=horario'.</msg>
-<arg>${INPUT_HORARIO}</arg>
-<arg>${horario}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:41.065182" elapsed="0.077648"/>
-</kw>
-<arg>12:00</arg>
-<status status="PASS" start="2026-05-31T22:38:41.064712" elapsed="0.078306"/>
-</kw>
-<kw name="Quando solicitar a associação">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:41.144080" level="INFO">Clicking button 'id=btnAssociar'.</msg>
-<arg>${BOTAO_ASSOCIAR}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-31T22:38:41.143819" elapsed="0.069483"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:41.143414" elapsed="0.070044"/>
-</kw>
-<kw name="Então o sistema deve apresentar a mensagem">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-31T22:38:41.214642" level="INFO">Verifying element 'id=mensagemMedicamento' contains exact text 'Medicamento associado com sucesso'.</msg>
-<arg>${MENSAGEM}</arg>
-<arg>${mensagem_esperada}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-31T22:38:41.214332" elapsed="0.014403"/>
-</kw>
-<arg>Medicamento associado com sucesso</arg>
-<status status="PASS" start="2026-05-31T22:38:41.213905" elapsed="0.014947"/>
-</kw>
-<status status="PASS" start="2026-05-31T22:38:40.829369" elapsed="0.399739"/>
+<status status="PASS" start="2026-06-01T21:10:33.738887" elapsed="0.800892"/>
 </test>
 <kw name="E fecha o navegador" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-31T22:38:41.230349" elapsed="2.232146"/>
+<status status="PASS" start="2026-06-01T21:10:34.541929" elapsed="2.352842"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:41.230059" elapsed="2.232578"/>
+<status status="PASS" start="2026-06-01T21:10:34.541688" elapsed="2.353242"/>
 </kw>
-<status status="PASS" start="2026-05-31T22:38:36.184660" elapsed="7.278019"/>
+<status status="PASS" start="2026-06-01T21:10:28.241004" elapsed="8.653966"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Medicamentos" id="s1" pass="6" fail="0" skip="0">Medicamentos</stat>
+<stat name="Medicamentos Ct08" id="s1" pass="2" fail="0" skip="0">Medicamentos Ct08</stat>
 </suite>
 </statistics>
 <errors>
